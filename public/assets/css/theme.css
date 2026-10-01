@@ -1,0 +1,37 @@
+:root {
+  --color-bg-start: #E1DAFB;   /* Lavender */
+  --color-bg-end: #FFD2F4;     /* Petal Frost */
+  --color-card: #758AD1;       /* Glaucous */
+  --color-primary: #4D3EA3;    /* Persian Blue */
+  --color-text-accent: #450C3F;/* Midnight Violet */
+}
+
+body {
+  background: linear-gradient(160deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-accent);
+}
+
+.glass-card {
+  background: rgba(117, 138, 209, 0.18); /* Glaucous transparan, glassmorphism */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); }
+
+.navbar-pill {
+  background: var(--color-text-accent);
+  border-radius: 999px;
+  color: #fff;
+}
