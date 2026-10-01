@@ -47,7 +47,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('post/share', 'PostController::share');
 
     // Manajemen Jadwal / Agenda
-    $routes->get('jadwal', 'ScheduleController::index');
     $routes->post('jadwal/store', 'ScheduleController::store');
     $routes->post('jadwal/done/(:num)', 'ScheduleController::markDone/$1');
     $routes->post('jadwal/delete/(:num)', 'ScheduleController::delete/$1');
@@ -55,9 +54,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     // 5. Memories, Calendar & Recaps (3 Tab Arsip)
     $routes->get('memories', 'MemoriesController::index');
     $routes->post('memories/upload-to-agenda', 'MemoriesController::uploadToAgenda');
-    $routes->get('moments', 'MomentController::index');
-    $routes->post('moments/upload', 'MomentController::upload');
-    $routes->post('moments/delete/(:num)', 'MomentController::delete/$1');
     $routes->get('rekap', 'RekapController::index');
 
     // 6. Profile Akun
