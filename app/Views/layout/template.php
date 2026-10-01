@@ -172,7 +172,7 @@
 
             <!-- FOOTER SIMPLE -->
             <footer class="py-6 border-t border-black/5 dark:border-white/5 text-center text-xs opacity-50">
-                &copy; <?= date('Y'); ?> dailee.com. All rights reserved.
+                &copy; <?= date('Y'); ?> Dailee. All rights reserved.
             </footer>
 
         </div>

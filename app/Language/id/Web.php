@@ -118,7 +118,7 @@ return [
     'schedule_label' => 'Agenda',
     'comment_placeholder' => 'Tulis komentar…',
     'no_feed' => 'Belum ada DaileeLog yang diposting hari ini.',
-    'page_title' => 'dailee.com – Daily Log, Agenda & Memories',
+    'page_title' => 'Dailee – Daily Log, Agenda & Memories',
     'quick_info' => 'Sistem berjalan normal. Nikmati pembaruan UI terbaru!',
     'weekdays' => ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
     'month_names' => ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],

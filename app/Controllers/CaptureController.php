@@ -232,7 +232,7 @@ class CaptureController extends BaseController
             $agenda['title'],
             $agenda['start_time'],
             $agenda['end_time'],
-            'Pengingat agenda dari dailee.com'
+            'Pengingat agenda dari Dailee'
         );
 
         return $this->response

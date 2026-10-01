@@ -6,7 +6,7 @@
         <div class="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-lavender dark:bg-white/10">
             <img src="<?= base_url('favicon.svg'); ?>" alt="" class="h-9 w-9">
         </div>
-        <h2 class="text-3xl font-extrabold text-midnight dark:text-white mb-2">Masuk ke dailee.com</h2>
+        <h2 class="text-3xl font-extrabold text-midnight dark:text-white mb-2">Masuk ke Dailee</h2>
         <p class="text-midnight/70 dark:text-white/70 mb-6 text-sm">Catat jadwal dan abadikan momenmu hari ini.</p>
 
         <?php if (session()->getFlashdata('success')) : ?>
@@ -30,7 +30,7 @@
                 <label for="password" class="block text-midnight dark:text-white font-bold mb-1 text-sm">Password</label>
                 <input id="password" type="password" name="password" autocomplete="current-password" class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-persianblue bg-white/80 dark:bg-white/10 dark:text-white outline-none transition" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="w-full bg-persianblue text-white font-bold py-3 rounded-xl hover:bg-midnight transition-colors shadow-md mt-2">Masuk ke dailee.com</button>
+            <button type="submit" class="w-full bg-persianblue text-white font-bold py-3 rounded-xl hover:bg-midnight transition-colors shadow-md mt-2">Masuk ke Dailee</button>
         </form>
 
         <div class="my-5 flex items-center gap-3 text-xs font-semibold text-midnight/50 dark:text-white/50">

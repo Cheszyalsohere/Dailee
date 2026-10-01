@@ -118,7 +118,7 @@ return [
     'schedule_label' => 'Schedule',
     'comment_placeholder' => 'Write a comment…',
     'no_feed' => 'No DaileeLogs have been posted today.',
-    'page_title' => 'dailee.com – Daily Log, Agenda & Memories',
+    'page_title' => 'Dailee – Daily Log, Agenda & Memories',
     'quick_info' => 'Everything is running smoothly. Enjoy the latest Dailee updates!',
     'weekdays' => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     'month_names' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
