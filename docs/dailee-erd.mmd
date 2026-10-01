@@ -1,0 +1,119 @@
+%% Dailee ERD — bereal_db (schema inspected from the active MySQL connection)
+%% Solid Mermaid links show conceptual 1:N relationships. See diagram note:
+%% FK* means app-level key usage; an enforced database FK was not verified.
+erDiagram
+    USERS {
+        int id PK
+        varchar name
+        varchar email UK
+        varchar username UK
+        varchar nama_lengkap
+        varchar password
+        enum role
+        varchar avatar
+        datetime created_at
+        datetime updated_at
+        varchar location
+        varchar occupation
+        varchar education
+        varchar zodiac_or_interest
+        varchar bio
+    }
+    FRIENDSHIPS {
+        int id PK
+        int user_id FK
+        int friend_id FK
+        enum status
+        datetime created_at
+    }
+    FOLLOWS {
+        int id PK
+        int follower_id FK
+        int following_id FK
+        datetime created_at
+    }
+    MOMENTS {
+        int id PK
+        int user_id FK
+        int schedule_id FK
+        varchar main_image
+        varchar inset_image
+        varchar photo_path
+        varchar caption
+        varchar mood
+        datetime taken_at
+        datetime created_at
+        varchar visibility
+    }
+    SCHEDULES {
+        int id PK
+        int user_id FK
+        varchar title
+        varchar category
+        text description
+        date date
+        datetime start_time
+        datetime end_time
+        varchar location
+        varchar status
+        datetime created_at
+        varchar alert_time
+        boolean sync_calendar
+    }
+    MOMENT_TAGS {
+        int id PK
+        int moment_id FK
+        varchar tag_label
+    }
+    POST_COMMENTS {
+        int id PK
+        int post_id FK
+        int user_id FK
+        text comment
+        datetime created_at
+    }
+    POST_REACTIONS {
+        int id PK
+        int post_id FK
+        int user_id FK
+        varchar type
+        varchar reaction
+        datetime created_at
+    }
+    POST_SHARES {
+        int id PK
+        int post_id FK
+        int user_id FK
+        datetime created_at
+    }
+    CHATS {
+        int id PK
+        int sender_id FK
+        int receiver_id FK
+        text message
+        datetime created_at
+    }
+    ACADEMIC_SCHEDULE {
+        int id PK
+        int user_id FK
+        varchar title
+        varchar category
+        datetime due_date
+        boolean is_done
+        datetime created_at
+    }
+
+    USERS ||--o{ MOMENTS : creates
+    USERS ||--o{ SCHEDULES : owns
+    SCHEDULES o|--o{ MOMENTS : optionally_linked_to
+    MOMENTS ||--o{ MOMENT_TAGS : labeled_with
+    MOMENTS ||--o{ POST_COMMENTS : receives
+    USERS ||--o{ POST_COMMENTS : writes
+    MOMENTS ||--o{ POST_REACTIONS : receives
+    USERS ||--o{ POST_REACTIONS : reacts
+    MOMENTS ||--o{ POST_SHARES : shared_as
+    USERS ||--o{ POST_SHARES : shares
+    USERS ||--o{ FRIENDSHIPS : initiates_or_receives
+    USERS ||--o{ FOLLOWS : follows_or_is_followed
+    USERS ||--o{ CHATS : sends_or_receives
+    USERS ||--o{ ACADEMIC_SCHEDULE : owns_legacy_schedule

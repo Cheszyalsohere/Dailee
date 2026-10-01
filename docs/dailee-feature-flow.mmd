@@ -1,0 +1,48 @@
+%% Feature flow and persisted data mapping. Some screen data is derived at query time.
+flowchart LR
+    A[Daftar / Login] --> U[(users)]
+    U --> P[Profil & pengaturan profil]
+    P --> U
+
+    U --> H[Home feed]
+    FR[(friendships)] --> H
+    M[(moments)] --> H
+    H -->|ambil foto & caption| C[Tangkap / terbitkan momen]
+    C --> M
+    SC[(schedules)] -. optional schedule_id .-> M
+    MT[(moment_tags)] --> M
+
+    H -->|like / emoji| R[(post_reactions)]
+    H -->|komentar| CM[(post_comments)]
+    H -->|share| SH[(post_shares)]
+    U --> R
+    U --> CM
+    U --> SH
+
+    U -->|kirim permintaan| FR
+    FR -->|pending → accepted| MUTUAL[Teman mutual]
+    U -->|follow / unfollow| FO[(follows)]
+    FO --> PROFOLLOW[Statistik followers/following]
+    MUTUAL --> INBOX[Inbox / Direct Messages]
+    INBOX --> CH[(chats)]
+    U --> CH
+
+    U -->|buat agenda / tugas| SC
+    M -->|created_at per tanggal| CAL[Memories / Kalender]
+    SC -->|start_time per tanggal| CAL
+    CAL --> ARCH[Arsip harian]
+    CAL --> RECAP[Rekap bulanan]
+    SC -->|status selesai| RECAP
+    M -->|jumlah momen & hari aktif| RECAP
+
+    H -. query + status pertemanan + visibility .-> DERIVED[Feed adalah hasil query]
+    SC -. jadwal terdekat .-> NOTICE[Notifikasi jadwal adalah hasil query]
+
+    LEGACY[(academic_schedule)] -. tabel lama terpisah .-> U
+
+    classDef core fill:#E1DAFB,stroke:#7558D1,color:#241B35,stroke-width:2px;
+    classDef social fill:#F4EFFF,stroke:#8B7BB2,color:#241B35,stroke-width:2px;
+    classDef derived fill:#FFF4E5,stroke:#F29A38,color:#241B35,stroke-width:2px;
+    class U,M,SC,MT,FR,FO,CH,R,CM,SH,LEGACY core;
+    class MUTUAL,INBOX,P,H,C,CAL,ARCH,PROFOLLOW social;
+    class RECAP,DERIVED,NOTICE derived;

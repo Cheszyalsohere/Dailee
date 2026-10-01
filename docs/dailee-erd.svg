@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6000" height="4000" viewBox="0 0 6000 4000" role="img" aria-labelledby="title desc"><title id="title">Dailee — ERD Chen</title><desc id="desc">Diagram ERD Dailee dalam notasi Chen: entitas berbentuk persegi panjang, atribut berbentuk oval, relasi berbentuk belah ketupat, dilengkapi kardinalitas.</desc><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FCFBFF"/><stop offset="1" stop-color="#F3EEFF"/></linearGradient><filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#40296B" flood-opacity=".12"/></filter></defs><rect width="6000" height="4000" fill="url(#bg)"/>
+<text x="150" y="110" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="750" fill="#5F43B0">DAILEE · ENTITY RELATIONSHIP DIAGRAM (NOTASI CHEN)</text>
+<text x="150" y="165" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="500" fill="#716783">Entitas = persegi panjang  •  Atribut = oval  •  Relasi = belah ketupat  •  Angka pada garis = kardinalitas</text>
+<path d="M940 1710 L1190 1030 M1610 1030 L1900 520" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="1400,960 1610,1030 1400,1100 1190,1030" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="1400" y="1038" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">memiliki</text>
+<text x="1156" y="1010" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="1644" y="1010" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M940 1740 L1190 1510 M1610 1510 L1900 1220" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="1400,1440 1610,1510 1400,1580 1190,1510" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="1400" y="1518" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">mengikuti</text>
+<text x="1156" y="1490" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="1644" y="1490" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M940 1790 L1190 2240 M1610 2240 L1900 2510" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="1400,2170 1610,2240 1400,2310 1190,2240" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="1400" y="2248" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">mengirim / menerima</text>
+<text x="1156" y="2220" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="1644" y="2220" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M940 1820 L1190 3000 M1610 3000 L1900 3320" fill="none" stroke="#E28A29" stroke-width="4" stroke-dasharray="14 10"/>
+<polygon points="1400,2930 1610,3000 1400,3070 1190,3000" fill="#EEE9FC" stroke="#E28A29" stroke-width="4" filter="url(#shadow)"/>
+<text x="1400" y="3008" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">punya jadwal lama</text>
+<text x="1156" y="2980" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#E28A29">1</text>
+<text x="1644" y="2980" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#E28A29">N</text>
+<path d="M940 1700 L2220 700 M2640 700 L3290 520" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="2430,630 2640,700 2430,770 2220,700" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="2430" y="708" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">membuat agenda</text>
+<text x="2186" y="680" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="2674" y="680" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M940 1820 L2220 1780 M2640 1780 L3290 1760" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="2430,1710 2640,1780 2430,1850 2220,1780" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="2430" y="1788" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">membuat momen</text>
+<text x="2186" y="1760" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="2674" y="1760" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M3440 567 V930 M3440 1350 V1713" fill="none" stroke="#E28A29" stroke-width="4" stroke-dasharray="14 10"/>
+<polygon points="3440,930 3510,1140 3440,1350 3370,1140" fill="#EEE9FC" stroke="#E28A29" stroke-width="4" filter="url(#shadow)"/>
+<text x="3440" y="1148" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">ditautkan ke agenda</text>
+<text x="3522" y="965" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#E28A29">0..1</text>
+<text x="3522" y="1330" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#E28A29">N</text>
+<path d="M3740 1760 L4210 820 M4630 820 L4770 520" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="4420,750 4630,820 4420,890 4210,820" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="4420" y="828" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">memiliki label</text>
+<text x="4176" y="800" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="4664" y="800" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M3740 1760 L4210 1420 M4630 1420 L4770 1220" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="4420,1350 4630,1420 4420,1490 4210,1420" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="4420" y="1428" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">menerima komentar</text>
+<text x="4176" y="1400" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="4664" y="1400" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M3740 1760 L4210 1960 M4630 1960 L4770 2070" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="4420,1890 4630,1960 4420,2030 4210,1960" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="4420" y="1968" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">menerima reaksi</text>
+<text x="4176" y="1940" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="4664" y="1940" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M3740 1760 L4210 2740 M4630 2740 L4770 3020" fill="none" stroke="#7663A3" stroke-width="4"/>
+<polygon points="4420,2670 4630,2740 4420,2810 4210,2740" fill="#EEE9FC" stroke="#7663A3" stroke-width="4" filter="url(#shadow)"/>
+<text x="4420" y="2748" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" fill="#30244A">dibagikan</text>
+<text x="4176" y="2720" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">1</text>
+<text x="4664" y="2720" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#7663A3">N</text>
+<path d="M475 1508 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1508" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="330" y="1515" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M244 1521 H416" stroke="#D66565" stroke-width="2"/>
+<path d="M475 1580 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1580" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1587" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">name</text>
+<path d="M475 1652 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1652" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1659" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">email · unique</text>
+<path d="M475 1724 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1724" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1731" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">username · unique</text>
+<path d="M475 1796 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1796" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1803" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">nama_lengkap</text>
+<path d="M475 1868 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1868" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1875" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">password</text>
+<path d="M475 1940 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="1940" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="1947" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">role</text>
+<path d="M475 2012 L650 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="330" cy="2012" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="330" y="2019" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">avatar</text>
+<path d="M1125 1544 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1544" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1551" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<path d="M1125 1616 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1616" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1623" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">updated_at</text>
+<path d="M1125 1688 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1688" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1695" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">location</text>
+<path d="M1125 1760 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1760" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1767" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">occupation</text>
+<path d="M1125 1832 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1832" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1839" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">education</text>
+<path d="M1125 1904 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1904" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1911" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">zodiac_or_interest</text>
+<path d="M1125 1976 L950 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1270" cy="1976" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1270" y="1983" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">bio</text>
+<rect x="650" y="1713" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M650 1737 H950" stroke="#7558D1" stroke-width="3"/>
+<rect x="650" y="1713" width="300" height="30" fill="#E1DAFB" />
+<text x="800" y="1769" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">USERS</text>
+<path d="M1725 448 L1900 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="448" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="1580" y="455" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M1494 461 H1666" stroke="#D66565" stroke-width="2"/>
+<path d="M1725 520 L1900 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="520" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="527" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id</text>
+<path d="M1725 592 L1900 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="592" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="599" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">friend_id</text>
+<path d="M2375 484 L2200 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="484" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="491" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">status</text>
+<path d="M2375 556 L2200 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="556" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="563" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="1900" y="473" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M1900 497 H2200" stroke="#7558D1" stroke-width="3"/>
+<rect x="1900" y="473" width="300" height="30" fill="#E1DAFB" />
+<text x="2050" y="529" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">FRIENDSHIPS</text>
+<path d="M1725 1184 L1900 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="1184" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="1580" y="1191" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M1494 1197 H1666" stroke="#D66565" stroke-width="2"/>
+<path d="M1725 1256 L1900 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="1256" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="1263" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">follower_id</text>
+<path d="M2375 1184 L2200 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="1184" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="1191" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">following_id</text>
+<path d="M2375 1256 L2200 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="1256" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="1263" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="1900" y="1173" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M1900 1197 H2200" stroke="#7558D1" stroke-width="3"/>
+<rect x="1900" y="1173" width="300" height="30" fill="#E1DAFB" />
+<text x="2050" y="1229" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">FOLLOWS</text>
+<path d="M1725 2438 L1900 2510" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="2438" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="1580" y="2445" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M1494 2451 H1666" stroke="#D66565" stroke-width="2"/>
+<path d="M1725 2510 L1900 2510" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="2510" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="2517" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">sender_id</text>
+<path d="M1725 2582 L1900 2510" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="2582" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="2589" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">receiver_id</text>
+<path d="M2375 2474 L2200 2510" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="2474" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="2481" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">message</text>
+<path d="M2375 2546 L2200 2510" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="2546" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="2553" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="1900" y="2463" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M1900 2487 H2200" stroke="#7558D1" stroke-width="3"/>
+<rect x="1900" y="2463" width="300" height="30" fill="#E1DAFB" />
+<text x="2050" y="2519" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">CHATS</text>
+<path d="M1725 3212 L1900 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="3212" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="1580" y="3219" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M1494 3225 H1666" stroke="#D66565" stroke-width="2"/>
+<path d="M1725 3284 L1900 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="3284" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="3291" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id</text>
+<path d="M1725 3356 L1900 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="3356" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="3363" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">title</text>
+<path d="M1725 3428 L1900 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="1580" cy="3428" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="1580" y="3435" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">category</text>
+<path d="M2375 3248 L2200 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="3248" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="3255" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">due_date</text>
+<path d="M2375 3320 L2200 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="3320" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="3327" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">is_done</text>
+<path d="M2375 3392 L2200 3320" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2520" cy="3392" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2520" y="3399" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="1900" y="3273" width="300" height="94" fill="#FFFFFF" stroke="#E28A29" stroke-width="4" stroke-dasharray="12 7" filter="url(#shadow)"/><path d="M1900 3297 H2200" stroke="#E28A29" stroke-width="3"/>
+<rect x="1900" y="3273" width="300" height="30" fill="#F6E7D4" />
+<text x="2050" y="3329" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">ACADEMIC_SCHEDULE</text>
+<path d="M3115 304 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="304" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="2970" y="311" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M2884 317 H3056" stroke="#D66565" stroke-width="2"/>
+<path d="M3115 376 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="376" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="383" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id</text>
+<path d="M3115 448 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="448" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="455" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">title</text>
+<path d="M3115 520 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="520" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="527" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">category</text>
+<path d="M3115 592 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="592" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="599" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">description</text>
+<path d="M3115 664 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="664" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="671" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">date</text>
+<path d="M3115 736 L3290 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="736" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="743" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">start_time</text>
+<path d="M3765 340 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="340" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="347" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">end_time</text>
+<path d="M3765 412 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="412" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="419" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">location</text>
+<path d="M3765 484 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="484" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="491" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">status</text>
+<path d="M3765 556 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="556" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="563" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<path d="M3765 628 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="628" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="635" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">alert_time</text>
+<path d="M3765 700 L3590 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="700" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="707" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">sync_calendar</text>
+<rect x="3290" y="473" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M3290 497 H3590" stroke="#7558D1" stroke-width="3"/>
+<rect x="3290" y="473" width="300" height="30" fill="#E1DAFB" />
+<text x="3440" y="529" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">SCHEDULES</text>
+<path d="M3115 1580 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1580" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="2970" y="1587" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M2884 1593 H3056" stroke="#D66565" stroke-width="2"/>
+<path d="M3115 1652 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1652" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="1659" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id</text>
+<path d="M3115 1724 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1724" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="1731" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">schedule_id</text>
+<path d="M3115 1796 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1796" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="1803" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">main_image</text>
+<path d="M3115 1868 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1868" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="1875" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">inset_image</text>
+<path d="M3115 1940 L3290 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="2970" cy="1940" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="2970" y="1947" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">photo_path</text>
+<path d="M3765 1616 L3590 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="1616" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="1623" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">caption</text>
+<path d="M3765 1688 L3590 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="1688" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="1695" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">mood</text>
+<path d="M3765 1760 L3590 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="1760" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="1767" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">taken_at</text>
+<path d="M3765 1832 L3590 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="1832" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="1839" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<path d="M3765 1904 L3590 1760" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="3910" cy="1904" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="3910" y="1911" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">visibility</text>
+<rect x="3290" y="1713" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M3290 1737 H3590" stroke="#7558D1" stroke-width="3"/>
+<rect x="3290" y="1713" width="300" height="30" fill="#E1DAFB" />
+<text x="3440" y="1769" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">MOMENTS</text>
+<path d="M4595 484 L4770 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="484" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="4450" y="491" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M4364 497 H4536" stroke="#D66565" stroke-width="2"/>
+<path d="M4595 556 L4770 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="556" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="563" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">moment_id</text>
+<path d="M5245 520 L5070 520" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="520" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="527" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">tag_label</text>
+<rect x="4770" y="473" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M4770 497 H5070" stroke="#7558D1" stroke-width="3"/>
+<rect x="4770" y="473" width="300" height="30" fill="#E1DAFB" />
+<text x="4920" y="529" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">MOMENT_TAGS</text>
+<path d="M4595 1148 L4770 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="1148" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="4450" y="1155" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M4364 1161 H4536" stroke="#D66565" stroke-width="2"/>
+<path d="M4595 1220 L4770 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="1220" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="1227" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">post_id → moments.id</text>
+<path d="M4595 1292 L4770 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="1292" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="1299" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id → users.id</text>
+<path d="M5245 1184 L5070 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="1184" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="1191" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">comment</text>
+<path d="M5245 1256 L5070 1220" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="1256" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="1263" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="4770" y="1173" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M4770 1197 H5070" stroke="#7558D1" stroke-width="3"/>
+<rect x="4770" y="1173" width="300" height="30" fill="#E1DAFB" />
+<text x="4920" y="1229" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">POST_COMMENTS</text>
+<path d="M4595 1998 L4770 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="1998" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="4450" y="2005" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M4364 2011 H4536" stroke="#D66565" stroke-width="2"/>
+<path d="M4595 2070 L4770 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="2070" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="2077" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">post_id → moments.id</text>
+<path d="M4595 2142 L4770 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="2142" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="2149" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id → users.id</text>
+<path d="M5245 1998 L5070 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="1998" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="2005" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">type</text>
+<path d="M5245 2070 L5070 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="2070" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="2077" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">reaction</text>
+<path d="M5245 2142 L5070 2070" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="2142" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="2149" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="4770" y="2023" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M4770 2047 H5070" stroke="#7558D1" stroke-width="3"/>
+<rect x="4770" y="2023" width="300" height="30" fill="#E1DAFB" />
+<text x="4920" y="2079" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">POST_REACTIONS</text>
+<path d="M4595 2984 L4770 3020" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="2984" rx="145" ry="26" fill="#FFF0F0" stroke="#D66565" stroke-width="2.5"/>
+<text x="4450" y="2991" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">id</text>
+<path d="M4364 2997 H4536" stroke="#D66565" stroke-width="2"/>
+<path d="M4595 3056 L4770 3020" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="4450" cy="3056" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="4450" y="3063" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">post_id → moments.id</text>
+<path d="M5245 2984 L5070 3020" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="2984" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="2991" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">user_id → users.id</text>
+<path d="M5245 3056 L5070 3020" fill="none" stroke="#9D91B7" stroke-width="2.5"/>
+<ellipse cx="5390" cy="3056" rx="145" ry="26" fill="#FFFFFF" stroke="#A99BBB" stroke-width="2.5"/>
+<text x="5390" y="3063" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="500" fill="#342C40">created_at</text>
+<rect x="4770" y="2973" width="300" height="94" fill="#FFFFFF" stroke="#7558D1" stroke-width="4" filter="url(#shadow)"/><path d="M4770 2997 H5070" stroke="#7558D1" stroke-width="3"/>
+<rect x="4770" y="2973" width="300" height="30" fill="#E1DAFB" />
+<text x="4920" y="3029" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#30244A">POST_SHARES</text>
+<rect x="150" y="3650" width="5700" height="240" rx="15" fill="#FFFFFF" stroke="#D9D0EA" stroke-width="3"/>
+<text x="190" y="3705" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="750" fill="#5F43B0">KETERANGAN</text>
+<text x="190" y="3750" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="500" fill="#302A3B">PK = primary key (digarisbawahi)   ·   FK = relasi foreign key   ·   FK* = relasi logis dari kolom yang dipakai aplikasi, belum dipastikan sebagai constraint database</text>
+<text x="190" y="3795" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="500" fill="#302A3B">Feed, notifikasi jadwal, dan rekap bulanan dihitung dari query (bukan tabel tersendiri). Calendar/rekap memakai moments.created_at + schedules.start_time/status.</text>
+<text x="190" y="3840" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="500" fill="#716783">academic_schedule adalah tabel lama, terpisah dari schedules yang dipakai fitur Agenda/Todo. post_id pada tabel interaksi menunjuk ke moments.id.</text>
+</svg>
