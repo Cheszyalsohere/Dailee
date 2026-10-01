@@ -4,101 +4,75 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Sidebar -->
-        <nav class="col-md-3 col-lg-2 sidebar">
+        <!-- Sidebar Admin -->
+        <nav class="col-md-3 col-lg-2 sidebar" style="background: linear-gradient(180deg, #372c25 0%, #241a14 100%); border-right: 3px solid #6b5645;">
             <div class="text-white px-3 mb-4">
                 <h5>Dashboard Admin</h5>
             </div>
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">
-                    Tampilan Daftar
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/books') ?>">
-                    Kelola Buku
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="<?= base_url('/admin/peminjaman') ?>">
-                    Kelola Peminjaman
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/site/images') ?>">
-                    Kelola Gambar Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/auth/logout') ?>">
-                    Keluar
-                    </a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">Tampilan Daftar</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/books') ?>">Kelola Buku</a></li>
+                <li class="nav-item"><a class="nav-link active" href="<?= base_url('/admin/peminjaman') ?>">Kelola Peminjaman</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/booking') ?>">Kelola Booking</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/users') ?>">Kelola Anggota</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/site/images') ?>">Kelola Gambar Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/auth/logout') ?>">Keluar</a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <div class="col-md-9 col-lg-10 main-content">
-            <h1 class="mb-4" style="color: var(--text-light);">Kelola Peminjaman</h1>
+            <h1 class="mb-4" style="color: var(--text-light);">Kelola Peminjaman Buku</h1>
 
-            <!-- Peminjaman Table -->
-            <div class="card">
-                <div class="card-body" style="background: linear-gradient(135deg, #efe4d4 0%, #e0d1bf 100%);">
+            <?php if(session()->getFlashdata('success')): ?>
+                <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+            <?php endif; ?>
+            <?php if(session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+            <?php endif; ?>
+
+            <div class="card border-0 shadow-sm" style="background: linear-gradient(180deg, #efe4d4 0%, #e4d7c5 100%);">
+                <div class="card-body">
                     <?php if (empty($peminjaman)): ?>
-                        <p class="text-muted text-center py-5">Belum ada data peminjaman</p>
+                        <p class="text-muted text-center py-5">Belum ada data peminjaman.</p>
                     <?php else: ?>
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead style="background: linear-gradient(135deg, #c9b08e 0%, #b99774 50%, #a6835e 100%); color: #111111;">
+                            <table class="table align-middle mb-0">
+                                <thead style="background: linear-gradient(135deg, #6d5747 0%, #4c3d30 100%); color: #ffffff;">
                                     <tr>
-                                        <th style="color: #111111;">No</th>
-                                        <th style="color: #111111;">User</th>
-                                        <th style="color: #111111;">Buku</th>
-                                        <th style="color: #111111;">Tgl Pinjam</th>
-                                        <th style="color: #111111;">Tgl Kembali</th>
-                                        <th style="color: #111111;">Tgl Dikembalikan</th>
-                                        <th style="color: #111111;">Status</th>
-                                        <th style="color: #111111;">Denda</th>
-                                        <th style="color: #111111;">Aksi</th>
+                                        <th>No</th>
+                                        <th>Peminjam</th>
+                                        <th>Buku</th>
+                                        <th>Tgl Pinjam</th>
+                                        <th>Tgl Harus Kembali</th>
+                                        <th>Status</th>
+                                        <th>Denda</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no = 1; foreach ($peminjaman as $item): ?>
-                                        <tr style="background: linear-gradient(135deg, #efe4d4 0%, #e0d1bf 100%); color: #111111;">
-                                            <td style="color: #111111;"><?= $no++ ?></td>
-                                            <td style="color: #111111;"><?= esc($item['username']) ?></td>
-                                            <td style="color: #111111;"><?= esc($item['nama_buku']) ?></td>
-                                            <td style="color: #111111;"><?= date('d/m/Y', strtotime($item['tanggal_pinjam'])) ?></td>
-                                            <td style="color: #111111;"><?= date('d/m/Y', strtotime($item['tanggal_kembali'])) ?></td>
-                                            <td style="color: #111111;">
-                                                <?php if (!empty($item['tanggal_dikembalikan'])): ?>
-                                                    <?= date('d/m/Y', strtotime($item['tanggal_dikembalikan'])) ?>
+                                    <?php $no = 1; foreach ($peminjaman as $p): ?>
+                                        <tr style="background: linear-gradient(135deg, #efe4d4 0%, #e3d6c4 100%); color: #111111;">
+                                            <td><?= $no++ ?></td>
+                                            <td><?= esc($p['username'] ?? 'User') ?></td>
+                                            <td><?= esc($p['nama_buku']) ?></td>
+                                            <td><?= date('d/m/Y', strtotime($p['tanggal_pinjam'])) ?></td>
+                                            <td><?= date('d/m/Y', strtotime($p['tanggal_kembali'])) ?></td>
+                                            <td>
+                                                <?php if ($p['status'] === 'dipinjam'): ?>
+                                                    <span class="badge" style="background-color: #dfc89d; color: #3d311b;">Dipinjam</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-warning">Belum</span>
+                                                    <span class="badge" style="background-color: #bfd4c1; color: #223226;">Dikembalikan</span>
                                                 <?php endif; ?>
                                             </td>
-                                            <td style="color: #111111;">
-                                                <?php if ($item['status'] === 'dipinjam'): ?>
-                                                    <span class="badge" style="background: #cfd9e3; color: #334155; border: 1px solid #b1c0d4;">Dipinjam</span>
-                                                <?php else: ?>
-                                                    <span class="badge" style="background: #cfd9e3; color: #334155; border: 1px solid #b1c0d4;">Dikembalikan</span>
-                                                <?php endif; ?>
+                                            <td>
+                                                <?= $p['denda'] > 0 ? 'Rp' . number_format($p['denda']) : '-' ?>
                                             </td>
-                                            <td style="color: #111111;">
-                                                <?php if ($item['denda'] > 0): ?>
-                                                    <span class="badge" style="background: #cfd9e3; color: #334155; border: 1px solid #b1c0d4;">Rp<?= number_format($item['denda']) ?></span>
+                                            <td>
+                                                <?php if ($p['status'] === 'dipinjam'): ?>
+                                                    <a href="<?= base_url('/admin/approve-return/' . $p['id']) ?>" class="btn btn-sm" style="background-color: #6d5747; color: white; font-weight: bold;" onclick="return confirm('Proses pengembalian buku ini?')">Proses Kembali</a>
                                                 <?php else: ?>
-                                                    <span class="badge" style="background: #cfd9e3; color: #334155; border: 1px solid #b1c0d4;">-</span>
-                                                <?php endif; ?>
-                                            </td>
-                                            <td style="color: #111111;">
-                                                <?php if ($item['status'] === 'dipinjam'): ?>
-                                                    <a href="<?= base_url('/admin/approve-return/' . $item['id']) ?>" class="btn btn-sm" style="background: #cfd9e3; color: #1e3a8a; border: 1px solid #b1c0d4;" onclick="return confirm('Konfirmasi pengembalian buku ini?')">
-                                                        Approve
-                                                    </a>
-                                                <?php else: ?>
-                                                    <span class="badge" style="background: #cfd9e3; color: #1e3a8a; border: 1px solid #b1c0d4;">Selesai</span>
+                                                    <span class="text-muted">Selesai</span>
                                                 <?php endif; ?>
                                             </td>
                                         </tr>

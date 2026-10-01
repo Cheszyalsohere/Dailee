@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-3 col-lg-2 sidebar">
+        <nav class="col-md-3 col-lg-2 sidebar" style="background: linear-gradient(180deg, #372c25 0%, #241a14 100%); border-right: 3px solid #6b5645;">
             <div class="text-white px-3 mb-4">
                 <h5>Dashboard Admin</h5>
             </div>
@@ -12,6 +12,8 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">Tampilan Daftar</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/books') ?>">Kelola Buku</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/peminjaman') ?>">Kelola Peminjaman</a></li>
+                <!-- Menu Kelola Booking (Baru Ditambahin) -->
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/booking') ?>">Kelola Booking</a></li>
                 <li class="nav-item"><a class="nav-link active" href="<?= base_url('/admin/users') ?>">Kelola Anggota</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/site/images') ?>">Kelola Gambar Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/auth/logout') ?>">Keluar</a></li>
@@ -24,7 +26,7 @@
                     <h1 class="mb-1" style="color: var(--text-light);">Kelola Anggota</h1>
                     <p class="text-muted mb-0">Lihat daftar pengguna, tambah anggota baru, ubah data, dan nonaktifkan akun.</p>
                 </div>
-                <a href="<?= base_url('/admin/users/create') ?>" class="btn btn-primary">+ Tambah Anggota</a>
+                <a href="<?= base_url('/admin/users/create') ?>" class="btn" style="background-color: #6d5747; color: white; font-weight: bold;">+ Tambah Anggota</a>
             </div>
 
             <?= view('partials/alerts') ?>
@@ -53,14 +55,14 @@
                                             <td><?= esc($user['role']) ?></td>
                                             <td>
                                                 <?php if (!empty($user['is_active'])): ?>
-                                                    <span class="badge bg-success">Aktif</span>
+                                                    <span class="badge" style="background-color: #bfd4c1; color: #223226;">Aktif</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-secondary">Nonaktif</span>
+                                                    <span class="badge" style="background-color: #d9b4a0; color: #4a2c21;">Nonaktif</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
                                                 <a class="btn btn-sm btn-warning me-1" href="<?= base_url('/admin/users/edit/' . $user['id']) ?>">Edit</a>
-                                                <a class="btn btn-sm btn-outline-dark" href="<?= base_url('/admin/users/toggle/' . $user['id']) ?>" onclick="return confirm('Ubah status akun ini?')">
+                                                <a class="btn btn-sm" style="background-color: #7f9db8; color: white; font-weight: 600;" href="<?= base_url('/admin/users/toggle/' . $user['id']) ?>" onclick="return confirm('Ubah status akun ini?')">
                                                     <?= !empty($user['is_active']) ? 'Nonaktifkan' : 'Aktifkan' ?>
                                                 </a>
                                             </td>

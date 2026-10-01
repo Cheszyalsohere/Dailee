@@ -20,6 +20,12 @@
                     Riwayat Peminjaman
                     </a>
                 </li>
+                <!-- INI MENU BOOKING NYA -->
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/user/booking') ?>">
+                    Booking Ruangan
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('/auth/logout') ?>">
                     Keluar
@@ -38,7 +44,16 @@
                     <?php if (empty($peminjaman)): ?>
                         <p class="text-muted text-center py-5">Anda belum pernah meminjam buku</p>
                     <?php else: ?>
-                        <div class="table-responsive">
+                        
+                        <!-- TOMBOL CETAK PDF (Gue tambahin di sini) -->
+                        <button onclick="cetakPDF()" class="btn mb-3" style="background: #6d5747; color: #ffffff; border: none; font-weight: bold; padding: 8px 16px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-file-pdf"></i> Cetak Riwayat PDF
+                        </button>
+
+                        <!-- BUNGKUS TABEL DIKASIH ID (Gue tambahin id="area-cetak-pdf") -->
+                        <div class="table-responsive" id="area-cetak-pdf" style="padding: 10px; border-radius: 8px;">
+                            <h4 style="text-align: center; color: #111; display: none; margin-bottom: 20px;" id="judul-pdf">Riwayat Peminjaman Buku Saya</h4>
+                            
                             <table class="table table-hover align-middle mb-0 history-table" style="border-collapse: separate; border-spacing: 0;">
                                 <thead style="background: linear-gradient(135deg, #6d5747 0%, #4c3d30 100%); color: #ffffff;">
                                     <tr>
@@ -180,5 +195,32 @@
         </div>
     </div>
 </div>
+
+<!-- SCRIPT HTML2PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function cetakPDF() {
+        // Munculin judul khusus di PDF
+        document.getElementById('judul-pdf').style.display = 'block';
+        
+        // Ambil elemen tabelnya
+        const elemen = document.getElementById('area-cetak-pdf');
+        
+        // Konfigurasi PDF
+        const opsi = {
+            margin:       0.5,
+            filename:     'Riwayat_Peminjaman_Ku.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
+        };
+
+        // Proses generate & download PDF
+        html2pdf().set(opsi).from(elemen).save().then(() => {
+            // Sembunyiin lagi judulnya setelah selesai
+            document.getElementById('judul-pdf').style.display = 'none';
+        });
+    }
+</script>
 
 <?= $this->endSection() ?>
