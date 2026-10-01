@@ -2,54 +2,80 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/** @var RouteCollection $routes */
+/**
+ * @var RouteCollection $routes
+ */
 
-// Landing Page
-$routes->get('/', 'Home::index');
-// Public search from home
-$routes->get('search', 'Home::search');
+// ================= 1 & 2. PUBLIC (Homepage & Auth) =================
+$routes->get('/', 'HomeController::index');
+$routes->get('login', 'AuthController::loginForm');
+$routes->post('login', 'AuthController::login');
+$routes->get('logout', 'AuthController::logout');
+$routes->get('register', 'AuthController::registerForm');
+$routes->post('register', 'AuthController::register');
+$routes->post('login/demo/(:segment)', 'AuthController::demoLogin/$1');
+$routes->get('lang/(:any)', 'LanguageController::switch/$1');
 
-// Auth Routes
-$routes->group('auth', function ($routes) {
-    $routes->get('login', 'Auth::login');
-    $routes->post('login', 'Auth::login');
-    $routes->get('register', 'Auth::register');
-    $routes->post('register', 'Auth::register');
-    $routes->get('logout', 'Auth::logout');
+// ================= APP AUTH (User Session) =================
+$routes->group('', ['filter' => 'auth'], function ($routes) {
+
+    // 3. Dashboard Utama: Feed Harian (My Log & Circle)
+    $routes->get('dashboard', 'DashboardController::index');
+    $routes->get('friends', 'FriendController::index');
+    $routes->post('friends/add', 'FriendController::add');
+    $routes->post('friends/accept/(:num)', 'FriendController::accept/$1');
+    $routes->post('friends/reject/(:num)', 'FriendController::reject/$1');
+    $routes->post('follow/toggle/(:num)', 'FriendController::toggleFollow/$1');
+    $routes->post('sparks/ask-ai', 'DashboardController::askSparksAi');
+    $routes->get('chat', 'ChatController::index');
+    $routes->post('chat/send', 'ChatController::sendMessage');
+    $routes->get('inbox', 'DirectMessageController::index');
+    $routes->get('inbox/(:num)', 'DirectMessageController::index/$1');
+    $routes->post('inbox/send/(:num)', 'DirectMessageController::send/$1');
+    $routes->get('notifications/feed', 'NotificationsController::feed');
+    $routes->post('notifications/read/(:num)', 'NotificationsController::markRead/$1');
+    $routes->post('notifications/read-all', 'NotificationsController::markAllRead');
+
+    // 4. Capture Daily Log & Reminder Agenda (.ics sync)
+    $routes->get('capture', 'CaptureController::index');
+    $routes->post('capture/publish', 'CaptureController::publish');
+    $routes->get('calendar/sync-ics/(:num)', 'CaptureController::downloadIcs/$1');
+    $routes->get('moments/edit/(:num)', 'CaptureController::edit/$1');
+    $routes->post('moments/update/(:num)', 'CaptureController::update/$1');
+    $routes->post('post/react', 'PostController::react');
+    $routes->post('post/comment', 'PostController::comment');
+    $routes->post('post/share', 'PostController::share');
+
+    // Manajemen Jadwal / Agenda
+    $routes->get('jadwal', 'ScheduleController::index');
+    $routes->post('jadwal/store', 'ScheduleController::store');
+    $routes->post('jadwal/done/(:num)', 'ScheduleController::markDone/$1');
+    $routes->post('jadwal/delete/(:num)', 'ScheduleController::delete/$1');
+
+    // 5. Memories, Calendar & Recaps (3 Tab Arsip)
+    $routes->get('memories', 'MemoriesController::index');
+    $routes->post('memories/upload-to-agenda', 'MemoriesController::uploadToAgenda');
+    $routes->get('moments', 'MomentController::index');
+    $routes->post('moments/upload', 'MomentController::upload');
+    $routes->post('moments/delete/(:num)', 'MomentController::delete/$1');
+    $routes->get('rekap', 'RekapController::index');
+
+    // 6. Profile Akun
+    $routes->get('profile', 'ProfileController::index');
+    $routes->get('profile/(:segment)', 'ProfileController::index/$1');
+    $routes->post('moments/delete/(:num)', 'ProfileController::deleteMoment/$1');
+    $routes->post('profile/update-avatar', 'ProfileController::updateAvatar');
+    $routes->post('profile/update-details', 'ProfileController::updateDetails');
+
+    // 7. To-Do List & Deadline Reminder
+    $routes->get('todo', 'TodoController::index');
+    $routes->post('todo/create', 'TodoController::create');
+    $routes->post('todo/toggle/(:num)', 'TodoController::toggle/$1');
+    $routes->post('todo/delete/(:num)', 'TodoController::delete/$1');
+
 });
 
-// Admin Routes
-$routes->group('admin', ['filter' => 'auth'], function ($routes) {
-    $routes->get('dashboard', 'Admin::dashboard');
-    
-    // Books Management
-    $routes->get('books', 'Admin::booksIndex');
-    $routes->get('books/create', 'Admin::bookCreate');
-    $routes->post('books/store', 'Admin::bookStore');
-    $routes->get('books/edit/(:num)', 'Admin::bookEdit/$1');
-    $routes->post('books/update/(:num)', 'Admin::bookUpdate/$1');
-    $routes->get('books/delete/(:num)', 'Admin::bookDelete/$1');
-    
-    // Peminjaman Management
-    $routes->get('peminjaman', 'Admin::peminjaman');
-    $routes->get('approve-return/(:num)', 'Admin::approveReturn/$1');
-    // Users Management
-    $routes->get('users', 'Admin::usersIndex');
-    $routes->get('users/create', 'Admin::userCreate');
-    $routes->post('users/store', 'Admin::userStore');
-    $routes->get('users/edit/(:num)', 'Admin::userEdit/$1');
-    $routes->post('users/update/(:num)', 'Admin::userUpdate/$1');
-    $routes->get('users/toggle/(:num)', 'Admin::toggleUserStatus/$1');
-    // Site images
-    $routes->get('site/images', 'Admin::siteImages');
-    $routes->post('site/images/upload', 'Admin::uploadSiteImage');
-});
-
-// User Routes
-$routes->group('user', ['filter' => 'auth'], function ($routes) {
-    $routes->get('dashboard', 'User::dashboard');
-    $routes->get('search', 'User::searchBooks');
-    $routes->get('borrow/(:num)', 'User::borrowBook/$1');
-    $routes->get('history', 'User::history');
-    $routes->get('return/(:num)', 'User::returnBookRequest/$1');
+// ================= ADMIN PANEL =================
+$routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
+    $routes->get('dashboard', 'Admin\DashboardController::index');
 });
