@@ -31,7 +31,7 @@
             </div>
             <div>
                 <label for="password" class="block text-midnight dark:text-white font-bold mb-1 text-sm">Password</label>
-                <input id="password" type="password" name="password" autocomplete="new-password" class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-persianblue bg-white/80 dark:bg-white/10 dark:text-white outline-none transition text-sm" placeholder="••••••••" required>
+                <input id="password" type="password" name="password" minlength="8" autocomplete="new-password" class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-persianblue bg-white/80 dark:bg-white/10 dark:text-white outline-none transition text-sm" placeholder="••••••••" required>
             </div>
             <button type="submit" class="w-full bg-persianblue text-white font-bold py-3.5 rounded-xl hover:bg-midnight transition-colors shadow-md mt-2">Buat Akun dailee.com</button>
         </form>

@@ -35,6 +35,7 @@
         </h3>
 
         <form action="<?= base_url('todo/create'); ?>" method="POST" class="space-y-3">
+            <?= csrf_field(); ?>
             <!-- Judul Tugas -->
             <div>
                 <input type="text" name="title" placeholder="Contoh: Revisi Bab 2 Semiotika..." class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-transparent focus:border-persianblue outline-none text-xs font-semibold text-midnight dark:text-white" required>
@@ -118,6 +119,7 @@
 
                         <!-- Action Delete -->
                         <form action="<?= base_url('todo/delete/' . $t['id']); ?>" method="POST" onsubmit="return confirm('Hapus tugas ini?')">
+                            <?= csrf_field(); ?>
                             <button type="submit" class="w-7 h-7 rounded-xl hover:bg-red-500 hover:text-white text-gray-400 text-xs flex items-center justify-center transition" title="Hapus">
                                 🗑️
                             </button>
@@ -148,6 +150,7 @@
                             </p>
                         </div>
                         <form action="<?= base_url('todo/delete/' . $t['id']); ?>" method="POST">
+                            <?= csrf_field(); ?>
                             <button type="submit" class="text-gray-400 hover:text-red-500 text-xs">✕</button>
                         </form>
                     </div>

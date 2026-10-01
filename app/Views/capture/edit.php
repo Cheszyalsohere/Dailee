@@ -12,6 +12,7 @@
     </div>
 
     <form action="<?= base_url('moments/update/' . $moment['id']); ?>" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <?= csrf_field(); ?>
         
         <!-- Bagian Edit Tanggal & Waktu (Paling Atas) -->
         <div class="bg-white/70 dark:bg-darkcard/70 backdrop-blur-xl border border-white/50 dark:border-white/10 rounded-[28px] p-5 shadow-xl">

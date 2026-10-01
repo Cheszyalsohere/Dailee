@@ -25,6 +25,7 @@
     <div class="bg-white/80 dark:bg-darkcard/80 backdrop-blur-2xl rounded-3xl p-5 border border-white/60 dark:border-white/10 shadow-xl mb-6">
         <h3 class="text-xs font-black uppercase tracking-wider text-persianblue dark:text-petalfrost mb-3"><?= esc(lang('Web.find_add_friends')) ?></h3>
         <form action="<?= base_url('friends/add'); ?>" method="POST" class="flex gap-2">
+            <?= csrf_field(); ?>
             <div class="relative flex-1">
                 <span class="absolute left-3.5 top-2.5 text-xs font-bold text-gray-400">@</span>
                 <input type="text" name="username" class="w-full pl-8 pr-4 py-2.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-transparent focus:border-persianblue outline-none text-xs font-bold text-midnight dark:text-white" placeholder="<?= esc(lang('Web.friend_username_placeholder')) ?>" required>
@@ -69,6 +70,7 @@
                         <div class="flex items-center gap-1.5">
                             <!-- Tombol Accept -->
                             <form action="<?= base_url('friends/accept/' . $req['request_id']); ?>" method="POST">
+                                <?= csrf_field(); ?>
                                 <button type="submit" class="bg-persianblue hover:bg-midnight text-white text-[11px] font-bold px-3 py-1.5 rounded-xl shadow transition flex items-center gap-1">
                                     <span>✓</span> Accept
                                 </button>
@@ -76,6 +78,7 @@
 
                             <!-- Tombol Tolak (X) -->
                             <form action="<?= base_url('friends/reject/' . $req['request_id']); ?>" method="POST">
+                                <?= csrf_field(); ?>
                                 <button type="submit" class="w-7 h-7 bg-gray-200 dark:bg-white/10 hover:bg-red-500 hover:text-white text-gray-600 dark:text-gray-300 rounded-xl flex items-center justify-center text-xs font-bold transition" title="Tolak">
                                     ✕
                                 </button>

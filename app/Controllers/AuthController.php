@@ -23,36 +23,34 @@ class AuthController extends BaseController
     {
         $session = session();
         $userModel = new UserModel();
-        
+
         $username = trim((string) $this->request->getPost('username'));
         $password = (string) $this->request->getPost('password');
-        
+
+        // Batasi percobaan login: maksimal 5 per menit untuk kombinasi IP + username.
+        $throttleKey = 'login_' . md5($this->request->getIPAddress() . '|' . strtolower($username));
+        if (! service('throttler')->check($throttleKey, 5, MINUTE)) {
+            return redirect()->to('/login')->with('error', 'Terlalu banyak percobaan login. Coba lagi dalam 1 menit.');
+        }
+
         $user = $userModel->where('username', $username)->first();
 
-        if ($user) {
-            // Cek password hash atau plain text (untuk testing)
-            $isPasswordValid = password_verify($password, $user['password']) || ($password === $user['password']);
+        if ($user && password_verify($password, $user['password'])) {
+            $session->regenerate(true);
+            $session->set([
+                'id'         => $user['id'],
+                'username'   => $user['username'],
+                'role'       => $user['role'],
+                'isLoggedIn' => true,
+                'user_id'    => $user['id'],
+                'logged_in'  => true,
+            ]);
 
-            if ($isPasswordValid) {
-                $session->set([
-                    'id'         => $user['id'],
-                    'username'   => $user['username'],
-                    'role'       => $user['role'],
-                    'isLoggedIn' => true,
-                    'user_id'   => $user['id'],
-                    'logged_in' => true,
-                ]);
-
-                // Redirect sesuai role
-                if ($user['role'] === 'admin') {
-                    return redirect()->to('/admin/dashboard');
-                }
-
-                return redirect()->to('/dashboard');
-            }
+            return $user['role'] === 'admin'
+                ? redirect()->to('/admin/dashboard')
+                : redirect()->to('/dashboard');
         }
-        
-        // Simpan flashdata dan kembali ke halaman login
+
         return redirect()->to('/login')->with('error', 'Username atau Password salah.');
     }
 
@@ -70,27 +68,36 @@ class AuthController extends BaseController
     {
         $userModel = new UserModel();
 
-        $username    = trim((string) $this->request->getPost('username'));
-        $namaLengkap = trim((string) $this->request->getPost('nama_lengkap'));
-        $email       = trim((string) $this->request->getPost('email'));
-        $password    = (string) $this->request->getPost('password');
+        $rules = [
+            'username'     => 'required|min_length[3]|max_length[30]|alpha_dash|is_unique[users.username]',
+            'nama_lengkap' => 'required|max_length[100]',
+            'email'        => 'required|valid_email|max_length[150]|is_unique[users.email]',
+            'password'     => 'required|min_length[8]|max_length[72]',
+        ];
+        $messages = [
+            'username' => [
+                'min_length' => 'Username minimal 3 karakter.',
+                'max_length' => 'Username maksimal 30 karakter.',
+                'alpha_dash' => 'Username hanya boleh berisi huruf, angka, strip, dan garis bawah.',
+                'is_unique'  => 'Username sudah dipakai! Coba username lain.',
+            ],
+            'nama_lengkap' => ['required' => 'Nama lengkap wajib diisi.'],
+            'email' => [
+                'valid_email' => 'Format email tidak valid.',
+                'is_unique'   => 'Email sudah terdaftar!',
+            ],
+            'password' => ['min_length' => 'Password minimal 8 karakter.'],
+        ];
 
-        // Validasi duplikasi username
-        if ($userModel->where('username', $username)->first()) {
-            return redirect()->back()->withInput()->with('error', 'Username sudah dipakai! Coba username lain.');
+        if (! $this->validate($rules, $messages)) {
+            return redirect()->back()->withInput()->with('error', (string) current($this->validator->getErrors()));
         }
 
-        // Validasi duplikasi email
-        if ($userModel->where('email', $email)->first()) {
-            return redirect()->back()->withInput()->with('error', 'Email sudah terdaftar!');
-        }
-
-        // Simpan user baru dengan password hash aman
         $userModel->save([
-            'username'     => $username,
-            'nama_lengkap' => $namaLengkap,
-            'email'        => $email,
-            'password'     => password_hash($password, PASSWORD_BCRYPT),
+            'username'     => trim((string) $this->request->getPost('username')),
+            'nama_lengkap' => trim((string) $this->request->getPost('nama_lengkap')),
+            'email'        => trim((string) $this->request->getPost('email')),
+            'password'     => password_hash((string) $this->request->getPost('password'), PASSWORD_BCRYPT),
             'role'         => 'user',
         ]);
 

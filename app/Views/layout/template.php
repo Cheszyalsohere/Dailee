@@ -55,6 +55,25 @@
         @keyframes dailee-float-b { from { transform: translate3d(5%,2%,0) scale(1.04); } to { transform: translate3d(-24%,-16%,0) scale(.9); } }
         @media (prefers-reduced-motion: reduce) { .landing-ambient::before, .landing-ambient::after { animation: none; } }
     </style>
+    <meta name="csrf-token" content="<?= csrf_hash() ?>">
+    <script>
+        // Kirim token CSRF otomatis pada fetch non-GET (cookie CSRF bersifat HttpOnly,
+        // jadi tokennya dibaca dari meta tag di atas).
+        (function () {
+            const nativeFetch = window.fetch.bind(window);
+            const token = () => (document.querySelector('meta[name="csrf-token"]') || {}).content || '';
+            window.fetch = function (input, init) {
+                init = init || {};
+                const method = (init.method || (input && input.method) || 'GET').toUpperCase();
+                if (method !== 'GET' && method !== 'HEAD') {
+                    const headers = new Headers(init.headers || (input && input.headers) || {});
+                    if (!headers.has('X-CSRF-TOKEN')) headers.set('X-CSRF-TOKEN', token());
+                    init.headers = headers;
+                }
+                return nativeFetch(input, init);
+            };
+        })();
+    </script>
 </head>
 <body class="bg-gradient-to-br from-lavender via-white to-petalfrost dark:from-darkbg dark:via-darkcard dark:to-midnight text-midnight dark:text-gray-100 min-h-screen font-sans transition-colors duration-300">
 
