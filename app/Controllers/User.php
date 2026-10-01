@@ -4,16 +4,22 @@ namespace App\Controllers;
 
 use App\Models\BookModel;
 use App\Models\PeminjamanModel;
+use App\Models\RuanganModel;
+use App\Models\BookingModel;
 
 class User extends BaseController
 {
     protected $bookModel;
     protected $peminjamanModel;
+    protected $ruanganModel;
+    protected $bookingModel;
 
     public function __construct()
     {
         $this->bookModel = new BookModel();
         $this->peminjamanModel = new PeminjamanModel();
+        $this->ruanganModel = new RuanganModel();
+        $this->bookingModel = new BookingModel();
         $this->checkUser();
     }
 
@@ -71,7 +77,6 @@ class User extends BaseController
             return redirect()->back()->with('error', 'Stok buku tidak tersedia!');
         }
 
-        // Check if already borrowing this book
         $activeLoan = $this->peminjamanModel->checkActiveLoan($userId, $bookId);
         if ($activeLoan) {
             return redirect()->back()->with('error', 'Anda sudah meminjam buku ini!');
@@ -133,7 +138,6 @@ class User extends BaseController
             'denda' => $denda
         ]);
 
-        // Update stok buku
         $this->bookModel->updateStok($peminjaman['book_id'], 1);
 
         $message = 'Buku berhasil dikembalikan!';
@@ -142,5 +146,53 @@ class User extends BaseController
         }
 
         return redirect()->to('/user/history')->with('success', $message);
+    }
+
+    // ==========================================
+    // FITUR BOOKING RUANGAN (Baru ditambahin)
+    // ==========================================
+    
+    public function booking()
+    {
+        $data = [
+            // Ambil semua data ruangan buat ditampilin di form
+            'ruangan' => $this->ruanganModel->findAll(),
+            // Ambil riwayat booking user ini
+            'riwayat_booking' => $this->bookingModel->where('user_id', session()->get('user_id'))->findAll()
+        ];
+        
+        return view('user/booking', $data);
+    }
+
+    public function prosesBooking()
+    {
+        $ruangan_id = $this->request->getPost('ruangan_id');
+        $tanggal    = $this->request->getPost('tanggal');
+        $jam_mulai  = $this->request->getPost('jam_mulai');
+        $jam_selesai = $this->request->getPost('jam_selesai');
+        
+        // 1. Validasi jam (Jam mulai gak boleh lebih dari jam selesai)
+        if ($jam_mulai >= $jam_selesai) {
+            return redirect()->back()->with('error', 'Jam mulai harus lebih awal dari jam selesai!');
+        }
+
+        // 2. Cek apakah jadwalnya bentrok
+        $cek = $this->bookingModel->cekBentrok($ruangan_id, $tanggal, $jam_mulai, $jam_selesai);
+        
+        if ($cek) {
+            return redirect()->back()->with('error', 'Yah, ruangan di jam tersebut udah di-booking orang lain. Pilih jam lain ya!');
+        }
+
+        // 3. Kalau aman, simpan ke database
+        $this->bookingModel->insert([
+            'user_id'     => session()->get('user_id'),
+            'ruangan_id'  => $ruangan_id,
+            'tanggal'     => $tanggal,
+            'jam_mulai'   => $jam_mulai,
+            'jam_selesai' => $jam_selesai,
+            'status'      => 'pending' // Langsung diset nunggu ACC admin
+        ]);
+
+        return redirect()->to('/user/booking')->with('success', 'Booking berhasil diajukan! Tunggu ACC dari admin ya.');
     }
 }
