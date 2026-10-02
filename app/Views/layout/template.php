@@ -116,7 +116,7 @@
             <header class="h-16 bg-white/40 dark:bg-darkcard/40 backdrop-blur-md border-b border-white/40 dark:border-white/10 px-6 flex items-center justify-between sticky top-0 z-30">
                 <!-- Logo Brand -->
                 <a href="<?= base_url(); ?>" class="text-xl font-black tracking-tighter uppercase text-persianblue dark:text-petalfrost hover:opacity-80 transition">
-    DAILEE<span class="text-midnight dark:text-white">.COM</span>
+    DAILEE
 </a>
 
                 <!-- Nav Menu Kanan -->
