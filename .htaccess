@@ -1,0 +1,25 @@
+# Pengaman cadangan. Document root yang benar adalah folder public/.
+# File ini hanya berlaku kalau document root keliru menunjuk ke root project;
+# dengan begitu source code, vendor/, dan .env tetap tidak bisa diakses.
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Semua request dilayani dari public/. Karena itu app/, vendor/, writable/,
+    # spark, composer.json, dan file lain di root menjadi tidak terjangkau (404).
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Lapis kedua: blokir file sensitif secara eksplisit.
+<FilesMatch "^(\.|spark$|composer\.(json|lock)$|phpunit\.dist\.xml$|preload\.php$|LICENSE$|README\.md$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
